@@ -1,6 +1,6 @@
-MIT License
+﻿MIT License
 
-Copyright (c) 2025 VintageDon
+Copyright (c) 2025 Donald Fountain (VintageDon)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+RAG-Optimized Documentation Framework
+Project Repository: https://github.com/vintagedon/rag-optimized-documentation
+Author: Donald Fountain (VintageDon) - https://github.com/vintagedon
+ORCID: 0009-0008-7695-4093
+
+This framework is designed to enable dual-audience documentation that serves
+both human readers and AI systems with equal effectiveness. The framework
+includes documentation templates, organizational patterns, automation tools,
+and implementation guidelines.
+
+For questions about licensing, commercial use, or attribution requirements,
+please contact the project maintainers through the GitHub repository.
