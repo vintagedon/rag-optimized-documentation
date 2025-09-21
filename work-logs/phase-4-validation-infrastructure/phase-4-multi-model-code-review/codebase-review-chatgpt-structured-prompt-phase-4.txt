@@ -1,0 +1,80 @@
+# Executive summary
+
+The repo structure and standards are solid, but the current snapshot hasn’t been fully brought under those standards yet. Analyzer artifacts show repo-wide violations in three areas: (1) missing YAML front-matter and semantic numbering, (2) broken internal links/dead-ends, and (3) orphaned files not integrated into the hierarchy. One community-health file is a stub. These are high-leverage to fix and straightforward to enforce with hooks/CI.
+
+# Signals from analyzer (Phase-4 validation run)
+
+* Files scanned: **97**
+* **Missing front matter:** 97
+* **Semantic numbering violations:** 97
+* **Broken internal links:** 227
+* **Dead ends:** 22
+* **Orphans:** 24
+  Artifacts used: `issues-20250921-191731Z.md`, `file_metrics-20250921-191731Z.csv`, `repo_metrics-*.json` (all under `work-logs/phase-4-validation-infrastructure/phase-4-validation/` in the snapshot).
+
+# Key findings (prioritized)
+
+1. **Systemic non-compliance with core invariants** (Critical, fix-effort: 3)
+   Standards (front-matter + 1–6 semantic headings) are defined but not yet applied across legacy documents. This undermines dual-audience retrieval and any downstream QA automation.
+
+2. **Pervasive link hygiene issues** (High, fix-effort: 2)
+   227 broken internal links and 22 dead ends create brittle navigation and reduce RAG usefulness. Anchors aren’t yet stabilized across headings.
+
+3. **Orphaned/unreferenced docs** (Medium, fix-effort: 1)
+   24 files aren’t reachable from indexes/READMEs, reducing traceability and confusing contributors.
+
+4. **Empty Code of Conduct** (High, fix-effort: 0)
+   `CODE_OF_CONDUCT.md` is a placeholder (title only). This is a zero-effort maturity fix with outsized contributor impact.
+
+# “Do now” quick wins (same day)
+
+* Populate **CODE\_OF\_CONDUCT.md** (Contributor Covenant v2.1 or similar).
+* Add **pre-commit** that runs the analyzer locally and blocks commits on:
+
+  * missing front-matter / malformed keys
+  * non-semantic headings
+  * new broken internal links
+* Add a **GitHub Actions** job calling `python src/analyze_docs.py .` to hard-fail PRs on the same checks.
+
+# One-day remediation plan
+
+1. **Front-matter/semantic pass (AM):**
+
+   * Insert the canonical YAML block in all flagged files.
+   * Normalize headings to the 1–6 semantic schema.
+   * Re-run analyzer until **front-matter=0** and **semantic violations=0**.
+
+2. **Link rewrite (mid-day):**
+
+   * Use analyzer’s link list to bulk-fix paths.
+   * Ensure each H1/H2 has a stable anchor; convert intra-repo links to repo-relative form.
+   * Re-run link checks until **broken links=0** and **dead ends=0**.
+
+3. **Orphans sweep (PM):**
+
+   * For each orphan, either (a) link it into the hierarchy, or (b) archive/remove if obsolete.
+   * Target **orphans=0** (allowlist exceptions only).
+
+# Guardrails to keep it fixed
+
+* **yamllint (custom schema):** enforce required keys (`author`, `ai_contributor`, `date: YYYY-MM-DD`, `version`, `status/tags` as defined in standards) and regex for `ai_contributor`.
+* **Semantic-heading linter:** simple check that H1..H6 follow the numeric scheme and increment rules.
+* **Link checker:** fail on new broken internal links; require stable anchors.
+* **Orphan check:** CI asserts zero orphans unless explicitly allowlisted.
+* **Pending policy (optional):** if you keep `*-pending.md`, add a CI rule: `>50` words ⇒ fail with guidance to drop `-pending`.
+
+# Acceptance criteria (close the loop)
+
+* Analyzer outputs show:
+
+  * `missing front matter: 0`
+  * `semantic numbering violations: 0`
+  * `broken internal links: 0`, `dead ends: 0`
+  * `orphans: 0` (or only allowlisted)
+* Community health: `CODE_OF_CONDUCT.md` populated.
+* CI: PRs fail when any of the above regress.
+
+# Next (optional)
+
+* Add a metadata staleness probe: compare `front-matter date/version` vs `last_commit_iso` and flag drift >30 days.
+* Produce a **before/after** delta from analyzer to show improvement in the Phase-4 work-log.
