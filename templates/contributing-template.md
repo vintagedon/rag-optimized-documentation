@@ -1,518 +1,348 @@
 ﻿<!--
 ---
-title: "Contributing Guidelines Template - RAG-Optimized Documentation Framework"
-description: "Reusable template for CONTRIBUTING.md files implementing RAG-Optimized Documentation standards"
-author: "VintageDon - https://github.com/vintagedon"
-date: "2025-01-21"
+title: "Contributing Guidelines - [Project Name]"
+description: "Comprehensive guide for contributing to [Project Name] including code, documentation, and community standards"
+owner: "VintageDon - https://github.com/vintagedon"
+ai_contributor: "[AI Model Name/Version if applicable]"
+lastReviewed: "YYYY-MM-DD"
 version: "1.0"
 status: "Published"
 tags:
-- type: template
-- domain: community-management
-- tech: contributing-guidelines
-- audience: maintainers/contributors
-related_documents:
-- "[Template Library](README.md)"
-- "[Primary README Template](primary-readme-template.md)"
-- "[Interior README Template](interior-readme-template.md)"
----
--->
-
-# templates/contributing-template.md
-
-# **Contributing Guidelines Template**
-
-Reusable template for creating CONTRIBUTING.md files that implement RAG-Optimized Documentation framework standards and community best practices.
-
----
-
-## 📖 **Introduction**
-
-This template provides a comprehensive structure for CONTRIBUTING.md files that align with the RAG-Optimized Documentation framework. It ensures consistent community guidelines while maintaining framework compliance for systematic knowledge organization.
-
-### Purpose
-
-Enable project maintainers to create comprehensive contributing guidelines that align with framework standards and promote effective community collaboration.
-
-### Scope
-
-**What's Covered:**
-
-- Complete CONTRIBUTING.md template with framework-compliant structure
-- Semantic section numbering for contributing guidelines
-- Community management best practices and standards
-- Integration with RAG-Optimized Documentation requirements
-
-**What's Not Covered:**
-
-- Project-specific technical requirements or coding standards
-- Organization-specific policies or procedures
-- Legal or licensing guidance (consult legal professionals)
-
-### Target Audience
-
-**Primary Users:** Project maintainers creating contributing guidelines  
-**Secondary Users:** Community managers establishing contribution standards  
-**Background Assumed:** Understanding of open-source community management and framework principles
-
-### Overview
-
-Template follows contributing guidelines semantic numbering schema while providing comprehensive guidance for community contribution and collaboration.
-
----
-
-## 🔗 **Dependencies & Relationships**
-
-### Framework Components
-
-- [Primary README Template](primary-readme-template.md) - Main project documentation structure
-- [Interior README Template](interior-readme-template.md) - Component-level documentation patterns
-
-### Community Standards
-
-- Standard open-source community practices and code of conduct requirements
-- GitHub community health file standards and best practices
-- Contributor Covenant and similar community behavior frameworks
-
----
-
-## 📝 **CONTRIBUTING.md Template**
-
-### Template Header (Copy and Customize)
-
-```markdown
-<!--
----
-title: "[Project Name] Contributing Guidelines - Community Collaboration Standards"
-description: "Comprehensive guidelines for contributing to [Project Name] with framework compliance requirements"
-author: "[Maintainer Name] - https://github.com/[username]"
-date: "[YYYY-MM-DD]"
-version: "1.0"
-status: "Published"
-tags:
-- type: contributing-guidelines
-- domain: [project-domain]
+- type: community-guidelines
+- domain: contribution-management
 - tech: [project-technologies]
-- audience: contributors
+- audience: contributors/maintainers
 related_documents:
-- "[Project Overview](README.md)"
+- "[Project README](README.md)"
 - "[Code of Conduct](CODE_OF_CONDUCT.md)"
 - "[Security Policy](SECURITY.md)"
+type: community-guidelines
 ---
 -->
 
-# **Contributing to [Project Name]**
+# 🤝 **Contributing to [Project Name]**
 
-We welcome contributions from the community! This guide provides everything you need to know about contributing to [Project Name].
-
----
-
-## **1. Introduction**
-
-[Project Name] is [brief description of project purpose and community values]. We believe in [community philosophy - e.g., open collaboration, inclusive development, quality-focused contributions].
-
-### Purpose
-
-Provide clear guidelines for community members to contribute effectively while maintaining project quality and framework compliance standards.
-
-### Scope
-
-**What's Covered:**
-- All types of contributions welcome (code, documentation, issues, discussions)
-- Process for submitting and reviewing contributions
-- Standards and requirements for different contribution types
-
-**What's Not Covered:**
-- [Specific exclusions relevant to your project]
-- [References to where excluded items are handled]
-
-### Target Audience
-
-**Primary Contributors:** [Description of main contributor types]  
-**Secondary Contributors:** [Additional contributor categories]  
-**Background Assumed:** [Required knowledge or experience level]
-
-### Overview
-
-Contributing to [Project Name] involves [brief overview of contribution process and community interaction].
+Thank you for your interest in contributing to [Project Name]! This guide provides everything you need to know about contributing to our project, from code contributions to documentation improvements and community engagement.
 
 ---
 
-## **2. Dependencies & Relationships**
+## 📖 **1. Introduction**
 
-### Prerequisites
-
-**Technical Requirements:**
-- [Technology/tool requirement 1] - [Version/setup requirements]
-- [Technology/tool requirement 2] - [Why it's needed]
-- [Development environment setup] - [Link to setup guide]
-
-**Community Requirements:**
-- Adherence to [Code of Conduct](CODE_OF_CONDUCT.md)
-- Understanding of [project values/principles]
-- Willingness to collaborate constructively with community members
-
-### Related Resources
-
-- [Main Project Documentation](README.md) - Project overview and context
-- [Development Setup Guide]([link]) - Technical environment preparation
-- [Project Roadmap]([link]) - Current development priorities and future plans
-
----
-
-## **3. Contribution Types & Process**
+We welcome contributions from developers, designers, writers, testers, and anyone interested in improving [Project Name]. Whether you're fixing a bug, adding a feature, improving documentation, or helping other community members, your contributions make this project better for everyone.
 
 ### Types of Contributions
 
 **Code Contributions:**
-- Bug fixes and feature implementations
+
+- Bug fixes and issue resolution
+- New features and enhancements
 - Performance improvements and optimizations
-- Test coverage improvements and validation
+- Test coverage improvements
 
 **Documentation Contributions:**
-- Framework-compliant documentation improvements
-- Tutorial and example development
-- Translation and accessibility enhancements
+
+- Guide improvements and corrections
+- Tutorial creation and enhancement
+- API documentation updates
+- Translation and localization efforts
 
 **Community Contributions:**
-- Issue reporting and triage assistance
-- Community support and question answering
-- Process improvement suggestions and feedback
 
-### Contribution Workflow
+- Helping others in discussions and issues
+- Providing feedback on proposals and features
+- Testing and reporting bugs
+- Sharing usage examples and best practices
 
-**1. Before You Start:**
-- Check existing issues and pull requests to avoid duplication
-- Review project roadmap for current priorities and focus areas
-- Join community discussions to understand current development context
+### Community Values
 
-**2. Development Process:**
+Our contribution process is built on:
+
+- **Respect** - Treating all contributors with kindness and professionalism
+- **Collaboration** - Working together to achieve shared goals
+- **Quality** - Maintaining high standards for code, documentation, and communication
+- **Inclusivity** - Welcoming contributors of all backgrounds and experience levels
+
+---
+
+## 🔗 **2. Getting Started**
+
+### Before You Begin
+
+**Required Setup:**
+
+1. **[Read our Code of Conduct](CODE_OF_CONDUCT.md)** - Understand our community standards
+2. **[Review the README](README.md)** - Understand project goals and architecture
+3. **[Check existing issues](https://github.com/[username]/[repository]/issues)** - See what's already being worked on
+4. **[Join discussions](https://github.com/[username]/[repository]/discussions)** - Connect with the community
+
+### Development Environment Setup
+
+**Prerequisites:**
+
+- [Tool/Language] version [X.Y] or higher
+- [Additional prerequisites as needed]
+
+**Setup Steps:**
+
 ```bash
-# Fork and clone repository
-git clone https://github.com/[your-username]/[project-name].git
-cd [project-name]
+# Fork and clone the repository
+git clone https://github.com/[your-username]/[repository-name].git
+cd [repository-name]
 
-# Create feature branch
-git checkout -b feature/[descriptive-name]
+# Install dependencies
+[package-manager] install
 
-# Make changes following project standards
-# [Include specific development workflow steps]
+# Set up development environment
+[setup-commands]
 
-# Commit with clear, descriptive messages
-git commit -m "[type]: [description]"
-
-# Push and create pull request
-git push origin feature/[descriptive-name]
+# Run tests to verify setup
+[test-command]
 ```
 
-**3. Pull Request Process:**
+### Finding Something to Work On
 
-- Create pull request with clear title and description
-- Include reference to related issues using keywords (fixes #123)
-- Ensure all automated checks pass
-- Respond to review feedback constructively
+**Good First Issues:**
 
-### Issue Reporting
+- Look for issues labeled `good first issue` or `help wanted`
+- Check the [project board](link-to-project-board) for prioritized work
+- Review documentation for areas needing improvement
 
-**Bug Reports:**
+**Proposing New Features:**
 
-- Use bug report template with clear reproduction steps
-- Include environment information and relevant context
-- Provide minimal reproducible example when possible
-
-**Feature Requests:**
-
-- Use feature request template with clear use case description
-- Explain problem being solved and proposed solution
-- Consider implementation complexity and maintenance impact
-
-**Documentation Issues:**
-
-- Reference specific documentation files and sections
-- Suggest specific improvements or clarifications
-- Follow framework compliance standards for documentation contributions
+1. **Check existing discussions** to avoid duplication
+2. **Open a discussion** to gather feedback before implementation
+3. **Create an issue** once the feature is approved by maintainers
 
 ---
 
-## **4. Development Standards**
+## 🛠️ **3. Contribution Process**
 
-### Code Quality Requirements
+### Code Contributions
 
-**Code Standards:**
+**Development Workflow:**
 
-- Follow [language-specific style guide] for consistent formatting
-- Include comprehensive tests for new functionality
-- Maintain or improve existing test coverage
-- Follow existing architectural patterns and conventions
+1. **Create a branch** from the main branch:
 
-**Documentation Requirements:**
+   ```bash
+   git checkout -b feature/your-feature-name
+   # or
+   git checkout -b fix/issue-description
+   ```
 
-- All new features must include framework-compliant documentation
-- Follow semantic section numbering for any README contributions
-- Include complete YAML front matter for new documentation files
-- Ensure all cross-references and navigation links are functional
+2. **Make your changes** following our coding standards:
+   - Follow the established code style and patterns
+   - Add tests for new functionality
+   - Update documentation as needed
+   - Ensure all tests pass
 
-**Review Process:**
+3. **Commit your changes** with clear, descriptive messages:
 
-- All contributions require review by project maintainer
-- Code changes require passing automated tests and quality checks
-- Documentation changes validated for framework compliance
-- Community feedback incorporated before final approval
+   ```bash
+   git add .
+   git commit -m "Add feature: brief description of change"
+   ```
 
-### Framework Compliance for Documentation
+4. **Push your branch** and create a pull request:
 
-**Required Standards:**
+   ```bash
+   git push origin feature/your-feature-name
+   ```
 
-- Use appropriate template (Primary README, Interior README, or Contributing)
-- Implement semantic section numbering correctly
-- Include complete YAML front matter metadata
-- Ensure Section 5 contains security and compliance information
+### Pull Request Guidelines
 
-**Validation Checklist:**
+**Before Submitting:**
 
-- [ ] YAML front matter complete and properly formatted
-- [ ] Semantic section numbering follows project standards
-- [ ] All internal links functional and accurate
-- [ ] Navigation follows hierarchical patterns
-- [ ] Content appropriate for target audience
+- [ ] All tests pass locally
+- [ ] Code follows project style guidelines
+- [ ] Documentation is updated (if applicable)
+- [ ] Commit messages are clear and descriptive
+- [ ] Branch is up to date with main
 
-### Testing and Validation
+**Pull Request Template:**
 
-**Automated Testing:**
+```markdown
+## Description
+[Brief description of changes]
 
-- All code changes must pass existing test suite
-- New functionality requires corresponding test coverage
-- Documentation changes validated for link integrity and formatting
+## Type of Change
+- [ ] Bug fix (non-breaking change which fixes an issue)
+- [ ] New feature (non-breaking change which adds functionality)
+- [ ] Breaking change (fix or feature that would cause existing functionality to not work as expected)
+- [ ] Documentation update
 
-**Manual Review:**
+## Testing
+- [ ] I have added tests that prove my fix is effective or that my feature works
+- [ ] New and existing unit tests pass locally with my changes
 
-- Code review for functionality, maintainability, and standards compliance
-- Documentation review for accuracy, clarity, and framework adherence
-- Community feedback integration and issue resolution
+## Checklist
+- [ ] My code follows the style guidelines of this project
+- [ ] I have performed a self-review of my own code
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have made corresponding changes to the documentation
+```
+
+### Review Process
+
+**What to Expect:**
+
+- Initial review within [timeframe]
+- Constructive feedback and suggestions
+- Possible requests for changes or clarification
+- Final approval and merge by maintainers
+
+**During Review:**
+
+- Respond to feedback promptly and professionally
+- Make requested changes in additional commits
+- Ask questions if feedback is unclear
+- Be open to suggestions and alternative approaches
 
 ---
 
-## **5. Security & Compliance**
+## 📝 **4. Standards & Guidelines**
 
-### Security Considerations
+### Code Standards
 
-**Contribution Security:**
+**[Language] Style Guide:**
 
-- Never include sensitive information in contributions (credentials, personal data)
-- Follow secure coding practices for all code contributions
-- Report security vulnerabilities through established security policy channels
-- Respect privacy and data protection requirements in all contributions
+```[language]
+// Example code formatting standards
+function exampleFunction(parameter) {
+    // Clear variable names
+    const descriptiveName = parameter.property;
+    
+    // Proper error handling
+    if (!descriptiveName) {
+        throw new Error('Parameter is required');
+    }
+    
+    return descriptiveName;
+}
+```
 
-### Code of Conduct
+**Documentation Standards:**
+
+- Use clear, concise language
+- Include code examples for new features
+- Update relevant documentation sections
+- Follow the existing documentation style
+
+**Testing Standards:**
+
+- Write tests for all new functionality
+- Maintain or improve test coverage
+- Include both positive and negative test cases
+- Follow existing test patterns and naming conventions
+
+### Commit Message Guidelines
+
+**Format:**
+
+```markdown
+type(scope): brief description
+
+Longer description if needed, explaining the what and why.
+
+Fixes #issue-number
+```
+
+**Types:**
+
+- `feat:` - New features
+- `fix:` - Bug fixes
+- `docs:` - Documentation changes
+- `style:` - Code style changes (formatting, etc.)
+- `refactor:` - Code refactoring
+- `test:` - Adding or updating tests
+- `chore:` - Maintenance tasks
+
+**Examples:**
+
+```markdown
+feat(api): add user authentication endpoint
+
+Add JWT-based authentication system with login/logout endpoints.
+Includes middleware for protected routes and token validation.
+
+Fixes #123
+```
+
+---
+
+## 🔒 **5. Security & Compliance**
+
+### Security Guidelines
+
+**Security Best Practices:**
+
+- Never commit sensitive information (API keys, passwords, etc.)
+- Follow secure coding practices for your language/framework
+- Report security vulnerabilities through our [Security Policy](SECURITY.md)
+- Use dependency scanning and keep dependencies up to date
+
+**Code Review Security:**
+
+- Review code for potential security vulnerabilities
+- Ensure proper input validation and sanitization
+- Check for proper error handling that doesn't leak sensitive information
+- Verify that authentication and authorization are properly implemented
+
+### Compliance Requirements
+
+**License Compliance:**
+
+- All contributions must be compatible with our [project license](LICENSE)
+- By contributing, you agree to license your work under the same terms
+- Ensure any third-party code includes proper attribution
 
 **Community Standards:**
-We are committed to providing a welcoming and inclusive environment for all community members. All contributors must adhere to our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-**Enforcement:**
-
-- Community members expected to self-moderate and help maintain positive environment
-- Issues reported to maintainers through appropriate channels
-- Consistent enforcement of standards with progressive response approach
-
-### Legal Compliance
-
-**Contribution Licensing:**
-
-- All contributions licensed under project license terms ([LICENSE])
-- Contributors retain copyright but grant necessary rights for project use
-- No proprietary or incompatibly licensed code accepted
-
-**Attribution:**
-
-- Contributors recognized in project documentation and release notes
-- Significant contributions acknowledged in project credits
-- Community contributions celebrated and promoted appropriately
+- Follow our [Code of Conduct](CODE_OF_CONDUCT.md) in all interactions
+- Respect intellectual property rights
+- Maintain professional and inclusive communication
 
 ---
 
-## **6. Community & Support**
+## 🌟 **6. Community & Support**
 
 ### Getting Help
 
-**Support Channels:**
+**When You Need Assistance:**
 
-- **GitHub Issues:** Bug reports, feature requests, and project-specific questions
-- **GitHub Discussions:** Community Q&A and general project discussion
-- **[Additional channels]:** [Project-specific communication channels]
+- **[💬 Discussions](https://github.com/[username]/[repository]/discussions)** - Ask questions and get community help
+- **[📖 Documentation](docs/)** - Comprehensive guides and references
+- **[🐛 Issues](https://github.com/[username]/[repository]/issues)** - Report bugs or technical problems
 
-**Documentation Resources:**
+**Mentorship and Guidance:**
 
-- [Main Project Documentation](README.md) - Complete project overview and guidance
-- [Development Setup Guide]([link]) - Technical environment preparation
-- [Framework Documentation]([link]) - RAG-Optimized Documentation standards
+- New contributors can request mentorship through discussions
+- Maintainers are available to help with complex contributions
+- Community members often provide guidance and code review
 
-### Community Engagement
+### Recognition
+
+**Contributor Recognition:**
+
+- Contributors are acknowledged in release notes
+- Significant contributions are highlighted in project documentation
+- Active contributors may be invited to join the maintainer team
+- Annual contributor appreciation posts and features
+
+### Communication Channels
+
+**Primary Channels:**
+
+- **GitHub Issues** - Bug reports and feature requests
+- **GitHub Discussions** - General questions and community interaction
+- **Pull Request Reviews** - Code-specific discussions
 
 **Communication Guidelines:**
 
-- Be respectful and constructive in all community interactions
-- Ask questions clearly with sufficient context for helpful responses
-- Share knowledge and help other community members when possible
-- Follow community guidelines for appropriate communication channels
-
-**Recognition and Rewards:**
-
-- Regular contributor recognition in project updates and releases
-- Community showcase highlighting valuable contributions and contributors
-- Opportunities for increased involvement and project responsibility
-
-### Maintainer Contact
-
-**Project Leadership:**
-
-- **Primary Maintainer:** [Name] - [Contact information]
-- **Community Manager:** [Name/Role] - [Contact information if different]
-- **Technical Lead:** [Name/Role] - [Contact information if different]
-
-**Escalation Process:**
-
-- Start with GitHub issues or discussions for most questions
-- Direct maintainer contact for sensitive issues or urgent matters
-- Community Code of Conduct violations reported through established channels
+- Be respectful and professional in all interactions
+- Provide clear, detailed information when reporting issues
+- Use appropriate channels for different types of communication
+- Follow up on your contributions and respond to feedback
 
 ---
 
-## References & Related Resources
-
-### Project Documentation
-
-- [Project Overview](README.md) - Main project documentation and navigation
-- [Code of Conduct](CODE_OF_CONDUCT.md) - Community behavior standards
-- [Security Policy](SECURITY.md) - Security vulnerability reporting procedures
-
-### Framework Resources
-
-- [RAG-Optimized Documentation Standards]([link]) - Framework requirements and best practices
-- [Template Library]([link]) - Additional templates for project documentation
-- [Community Examples]([link]) - Examples of successful framework implementations
-
----
-
-## Documentation Metadata
-
-### Change Log
-
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | [YYYY-MM-DD] | Initial contributing guidelines | [Author Name] |
-
-### Authorship & Collaboration
-
-**Primary Author:** [Author Name] ([GitHub Profile]([link]))  
-**Community Input:** [Community feedback and review process]  
-**Framework Compliance:** Validated against RAG-Optimized Documentation standards  
-**Quality Assurance:** [Review and validation process used]
-
-### Technical Notes
-
-- **Template Version:** RAG-Optimized Documentation Contributing Template v1.0
-- **Framework Compliance:** Implements semantic section numbering and YAML front matter standards
-- **Community Integration:** Designed for GitHub community health file standards
-
-*Document Version: 1.0 | Last Updated: [YYYY-MM-DD] | Status: Published*
-
----
-
-## 🎯 **Template Customization Guidelines**
-
-### Required Customizations
-
-**Project-Specific Information:**
-
-- Replace all `[Project Name]` placeholders with actual project name
-- Update `[Maintainer Name]` and contact information
-- Fill in technical requirements and development environment setup
-- Customize contribution types based on project needs
-
-**Framework Integration:**
-
-- Ensure semantic section numbering aligns with project documentation
-- Update related documents links to match actual project structure
-- Customize security and compliance sections for project requirements
-- Align community standards with project values and goals
-
-### Optional Enhancements
-
-**Project-Specific Additions:**
-
-- Add domain-specific contribution guidelines (e.g., design, translation, testing)
-- Include project-specific workflow tools or automation requirements
-- Expand recognition and reward programs based on community size
-- Add specialized onboarding for different contributor types
-
----
-
-## 🔒 **Security & Compliance**
-
-### Template Security
-
-**Security Considerations:**
-
-- Template provides framework for secure contribution practices
-- Emphasizes security awareness in contribution guidelines
-- Includes appropriate references to security policy and reporting procedures
-- Supports community self-governance and positive collaboration
-
-### Framework Compliance
-
-**Standards Adherence:**
-
-- Template implements semantic section numbering for contributing guidelines
-- Includes complete YAML front matter structure
-- Provides Section 5 (Security & Compliance) content appropriate for community guidelines
-- Maintains hierarchical navigation and cross-reference patterns
-
-### Community Standards
-
-**Best Practice Integration:**
-
-- Aligns with GitHub community health file standards
-- Incorporates Contributor Covenant principles for inclusive communities
-- Supports standard open-source contribution workflows and practices
-- Emphasizes quality, collaboration, and constructive community engagement
-
----
-
-## 📚 **References & Related Resources**
-
-### Template Library
-
-- [Primary README Template](primary-readme-template.md) - Main project documentation structure
-- [Interior README Template](interior-readme-template.md) - Component documentation patterns
-- [General Page Template](general-page-template.md) - Standard documentation page structure
-
-### Community Standards
-
-- GitHub Community Guidelines and best practices for open-source projects
-- Contributor Covenant for inclusive community behavior standards
-- Open-source contribution workflow standards and automation best practices
-
----
-
-## 📋 **Documentation Metadata**
-
-### Change Log
-
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | 2025-01-21 | Initial contributing template | VintageDon |
-
-### Authorship & Collaboration
-
-**Primary Author:** VintageDon ([GitHub Profile](https://github.com/vintagedon))  
-**ORCID:** [0009-0008-7695-4093](https://orcid.org/0009-0008-7695-4093)  
-**Methodology:** Community management best practices integrated with framework standards  
-**Quality Assurance:** Template validation through community feedback and framework compliance testing
-
-### Technical Notes
-
-- **Template Type:** Contributing Guidelines with semantic section numbering
-- **Framework Integration:** Full compliance with RAG-Optimized Documentation standards
-- **Community Focus:** Designed for inclusive, collaborative open-source development
-
-*Document Version: 1.0 | Last Updated: 2025-01-21 | Status: Published*
+*Contributing Guidelines Version: 1.0 | Last Updated: YYYY-MM-DD | Questions? Open a [discussion](https://github.com/[username]/[repository]/discussions)*

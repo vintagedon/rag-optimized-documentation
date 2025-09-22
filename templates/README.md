@@ -2,9 +2,9 @@
 ---
 title: "Templates - RAG-Optimized Documentation Framework Template Library"
 description: "Directory overview and navigation for the complete collection of RAG-optimized documentation templates and implementation guides"
-author: "VintageDon - https://github.com/vintagedon"
+owner: "VintageDon - https://github.com/vintagedon"
 ai_contributor: "Claude Sonnet 4"
-date: "2025-01-21"
+lastReviewed: "2025-01-21"
 version: "1.0"
 status: "Published"
 tags:
@@ -16,6 +16,7 @@ related_documents:
 - "[Project Root](../README.md)"
 - "[Documentation Standards](../docs/standards-specification.md)"
 - "[Examples Collection](../examples/README.md)"
+type: directory-overview
 ---
 -->
 

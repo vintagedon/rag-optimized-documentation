@@ -2,10 +2,10 @@
 ---
 title: "Cognitive Specialization Prompts - Model-Specific Templates for Multi-Perspective Analysis"
 description: "Copy-paste ready prompt templates that leverage each AI model's cognitive strengths for systematic project assessment"
-author: "VintageDon - https://github.com/vintagedon"
-ai_contributor: "Claude Sonnet 4 - RAVGVR Methodology"
-date: "2025-01-21"
-version: "1.0"
+owner: "VintageDon - https://github.com/vintagedon"
+ai_contributor: "Claude Sonnet 4"
+lastReviewed: "2025-01-22"
+version: "2.0"
 status: "Published"
 tags:
 - type: prompt-templates
@@ -13,19 +13,21 @@ tags:
 - tech: gemini-gpt-claude
 - audience: project-managers/engineers
 related_documents:
-- "[Multi-Model Codebase Analysis](multi-model-codebase-analysis.md)"
+- "[Multi-Model Validation Overview](README.md)"
 - "[45-Minute Milestone Review](45-minute-milestone-review.md)"
+- "[Multi-Model Codebase Analysis](multi-model-codebase-analysis.md)"
 - "[Institutional Knowledge Accumulation](institutional-knowledge-accumulation.md)"
+type: prompt-templates
 ---
 -->
 
-# 🎯 **Cognitive Specialization Prompts**
+# 📄 **Cognitive Specialization Prompts**
 
 Copy-paste ready prompt templates that leverage each AI model's unique cognitive strengths for systematic multi-perspective project assessment.
 
 ---
 
-## **📖 Introduction**
+## 📖 **1. Introduction**
 
 This document provides tested prompt templates that extract specialized cognitive perspectives from different AI models. Each prompt is designed to leverage specific model strengths while maintaining consistency in output format for cross-model analysis and synthesis.
 
@@ -60,16 +62,16 @@ These prompts implement cognitive specialization by assigning specific analytica
 
 ---
 
-## **🔗 Dependencies & Relationships**
+## 🔗 **2. Dependencies & Relationships**
 
 This prompt framework integrates with multi-model review workflows and institutional knowledge management.
 
 ### Related Components
 
-- **Multi-Model Codebase Analysis** - Repository access and preparation methods
-- **45-Minute Milestone Review** - Complete orchestration workflow
-- **Google Drive Integration** - Context storage and retrieval patterns
-- **TRACE Methodology** - Human-AI collaboration framework
+- [📁 Multi-Model Validation Overview](README.md) - Complete methodology context and framework
+- [📄 45-Minute Milestone Review](45-minute-milestone-review.md) - Complete orchestration workflow
+- [📄 Multi-Model Codebase Analysis](multi-model-codebase-analysis.md) - Repository access and preparation methods
+- [📄 Institutional Knowledge Accumulation](institutional-knowledge-accumulation.md) - Context storage and retrieval patterns
 
 ### External Dependencies
 
@@ -80,7 +82,7 @@ This prompt framework integrates with multi-model review workflows and instituti
 
 ---
 
-## **🎭 Strategic Assessment Prompts**
+## 📂 **3. Strategic Assessment Prompts**
 
 ### Gemini Strategic Analysis Template
 
@@ -135,9 +137,13 @@ Provide [your perspective] on whether the strategic vision aligns with implement
 
 ---
 
-## **⚙️ Technical Assessment Prompts**
+## 🚀 **4. Usage & Implementation**
 
-### GPT Engineering Analysis Template
+Complete implementation guide for using cognitive specialization prompts effectively.
+
+### Technical Assessment Prompts
+
+**GPT Engineering Analysis Template:**
 
 ```markdown
 ChatGPT! We're experimenting with specialized multi-model reviews where different AI models focus on their cognitive strengths. You're getting the **implementation and engineering assessment** role.
@@ -167,7 +173,7 @@ ChatGPT! We're experimenting with specialized multi-model reviews where differen
 What's your engineering assessment of where this project stands?
 ```
 
-### Gemini Technical Analysis Template (Alternative)
+**Gemini Technical Analysis Template (Alternative):**
 
 ```markdown
 Hello Gemini! We are conducting a multi-model review where different AIs focus on their unique cognitive strengths. You are assigned the role of a **Principal Engineer** performing a rigorous codebase and documentation review.
@@ -196,61 +202,40 @@ Hello Gemini! We are conducting a multi-model review where different AIs focus o
 What is your technical assessment of this project's current state and readiness for adoption?
 ```
 
-### Technical Cross-Analysis Template
+### Cross-Model Analysis Framework
 
-```markdown
-[Model Name], here's [Other Model]'s technical assessment of the same project. Evaluate it through your [engineering perspective]:
+**Analysis Pairing Strategy:**
 
-**[OTHER MODEL]'S TECHNICAL FINDINGS**:
-- [Summarize key technical points and recommendations]
-
-**YOUR CROSS-ANALYSIS TASK**:
-1. **Implementation Reality Check**: Which recommendations have hidden complexity?
-2. **Resource vs. Vision Gap**: What engineering effort is required for stated goals?
-3. **Technical Risk Assessment**: Could implementation constraints limit the vision?
-4. **Execution Prerequisites**: What must be built before benefits are achievable?
-
-Assess whether the technical roadmap is [feasible/strategically-aligned] given current project state.
-```
-
----
-
-## **🔄 Cross-Model Analysis Framework**
-
-### Analysis Pairing Strategy
-
-**Strategic ↔ Technical Cross-Analysis:**
+Strategic ↔ Technical Cross-Analysis:
 
 - **Gemini Strategic** → **GPT Technical**: "Are strategic goals technically achievable?"
 - **GPT Technical** → **Gemini Strategic**: "Do technical constraints affect market position?"
 
-**Technical ↔ Technical Cross-Analysis:**
+Technical ↔ Technical Cross-Analysis:
 
 - **GPT Tactical** → **Gemini Architectural**: "Do immediate fixes address systemic issues?"
 - **Gemini Architectural** → **GPT Tactical**: "Are architectural concerns implementable?"
 
-### Output Integration Patterns
+**Output Integration Patterns:**
 
-**Convergence Identification:**
+Convergence Identification:
 
 - Where models agree → High confidence recommendations
 - Where models disagree → Areas requiring human judgment
 - Where models complement → Comprehensive solution space
 
-**Decision Synthesis Framework:**
+Decision Synthesis Framework:
 
 1. **Technical Feasibility** (from engineering assessments)
 2. **Strategic Viability** (from market/vision assessments)
 3. **Cross-Model Validation** (from analysis pairs)
 4. **Human Integration** (synthesized decision framework)
 
----
+### Output Format Specifications
 
-## **📊 Output Format Specifications**
+**Standardized Response Structure:**
 
-### Standardized Response Structure
-
-**All Primary Assessments Should Include:**
+All Primary Assessments Should Include:
 
 - **Executive Summary** (2-3 sentences)
 - **Key Findings** (3-5 bullet points)
@@ -258,16 +243,16 @@ Assess whether the technical roadmap is [feasible/strategically-aligned] given c
 - **Recommendations** (actionable next steps)
 - **Assessment Verdict** (binary ready/not-ready with rationale)
 
-**All Cross-Analyses Should Include:**
+All Cross-Analyses Should Include:
 
 - **Alignment Assessment** (areas of agreement)
 - **Tension Identification** (areas of disagreement)
 - **Integration Recommendations** (how to resolve conflicts)
 - **Confidence Levels** (high/medium/low for each finding)
 
-### Quality Metrics
+**Quality Metrics:**
 
-**Assessment Quality Indicators:**
+Assessment Quality Indicators:
 
 - **Specificity**: File paths, exact recommendations, effort estimates
 - **Evidence**: Citations from actual project materials
@@ -276,7 +261,9 @@ Assess whether the technical roadmap is [feasible/strategically-aligned] given c
 
 ---
 
-## **🔒 Security & Compliance**
+## 🔒 **5. Security & Compliance**
+
+Security considerations and compliance requirements for prompt template usage.
 
 ### Prompt Security Considerations
 
@@ -312,48 +299,92 @@ Assess whether the technical roadmap is [feasible/strategically-aligned] given c
 
 ---
 
-## **📚 References & Related Resources**
+## 🛠️ **6. Maintenance & Support**
 
-### Internal References
+Guidelines for maintaining and supporting cognitive specialization prompt implementation.
 
-- **[Multi-Model Codebase Analysis](multi-model-codebase-analysis.md)** - Repository access and preparation methods
-- **[45-Minute Milestone Review](45-minute-milestone-review.md)** - Complete orchestration workflow
-- **[Institutional Knowledge Accumulation](institutional-knowledge-accumulation.md)** - Context management and storage
+### Template Maintenance
 
-### External Resources
+**Regular Updates:**
 
-- **[Prompt Engineering Guide](https://www.promptingguide.ai/)** - General prompt engineering principles
-- **[OpenAI Best Practices](https://platform.openai.com/docs/guides/prompt-engineering)** - ChatGPT-specific optimization techniques
-- **[Google AI Responsible Practices](https://ai.google/principles/)** - Guidelines for Gemini usage
+- Periodic review and refinement of templates based on usage experience
+- Integration of community feedback and improvement suggestions
+- Alignment with evolving AI model capabilities and interface changes
+- Coordination with organizational process and tool changes
 
-### Community Resources
+### Quality Assurance
 
-- **[AI Prompt Sharing Communities](https://github.com/topics/prompt-engineering)** - Open source prompt collections
-- **[Multi-Agent AI Research](https://arxiv.org/list/cs.AI/recent)** - Academic research on multi-model coordination
+**Template Validation:**
+
+- Validation of template effectiveness through user feedback
+- Regular audit of prompt outcomes and assessment quality
+- Continuous improvement of template clarity and actionability
+- Support for adapting templates to different project types and contexts
+
+### Implementation Support
+
+**Training and Development:**
+
+- Clear guidance for new practitioners using cognitive specialization prompts
+- Examples and case studies demonstrating effective template usage
+- Integration with organizational training and development programs
+- Mentorship and support for complex prompt customization scenarios
+
+### Template Evolution
+
+**Continuous Improvement:**
+
+- Regular analysis of template effectiveness through outcome tracking
+- Integration of lessons learned into template refinement
+- Development of specialized templates for different domains and contexts
+- Community contribution and feedback integration
 
 ---
 
-## **📋 Documentation Metadata**
+## 📚 **7. References & Related Resources**
+
+### Internal References
+
+- [📁 Multi-Model Validation Overview](README.md) - Complete methodology context and framework
+- [📄 45-Minute Milestone Review](45-minute-milestone-review.md) - Complete orchestration workflow
+- [📄 Multi-Model Codebase Analysis](multi-model-codebase-analysis.md) - Repository access and preparation methods
+- [📄 Institutional Knowledge Accumulation](institutional-knowledge-accumulation.md) - Context management and storage
+
+### External Resources
+
+- **Prompt Engineering Guide** - General prompt engineering principles
+- **OpenAI Best Practices** - ChatGPT-specific optimization techniques
+- **Google AI Responsible Practices** - Guidelines for Gemini usage
+
+### Community Resources
+
+- **AI Prompt Sharing Communities** - Open source prompt collections
+- **Multi-Agent AI Research** - Academic research on multi-model coordination
+
+---
+
+## 📋 **8. Documentation Metadata**
 
 ### Change Log
 
 | Version | Date | Changes | Author |
 |---------|------|---------|--------|
+| 2.0 | 2025-01-22 | Rewritten for semantic numbering compliance and framework standards | VintageDon |
 | 1.0 | 2025-01-21 | Initial prompt template documentation with tested examples | VintageDon |
 
 ### Authorship & Collaboration
 
 **Primary Author:** VintageDon ([GitHub Profile](https://github.com/vintagedon))  
 **ORCID:** [0009-0008-7695-4093](https://orcid.org/0009-0008-7695-4093)  
-**AI Assistance:** Claude Sonnet 4 using RAVGVR methodology  
-**Methodology:** TRACE (Transparent, Reproducible, Audited Co-creation Engine)  
+**AI Assistance:** Claude Sonnet 4  
+**Methodology:** RAVGVR (Request-Analyze-Verify-Generate-Validate-Reflect)  
 **Quality Assurance:** Validated through real project assessment implementation
 
 ### Technical Notes
 
-- **Template Validation**: Tested with RAG-Optimized Documentation Framework project
-- **Model Compatibility**: Verified with GPT-4, Gemini Pro, and Claude Sonnet 4
-- **Update Frequency**: Prompts refined based on multi-model review outcomes
-- **Customization Guidelines**: Templates designed for project-specific adaptation
+- **Template Validation:** Tested with RAG-Optimized Documentation Framework project
+- **Model Compatibility:** Verified with GPT-4, Gemini Pro, and Claude Sonnet 4
+- **Update Frequency:** Prompts refined based on multi-model review outcomes
+- **Customization Guidelines:** Templates designed for project-specific adaptation
 
-*Document Version: 1.0 | Last Updated: 2025-01-21 | Status: Published*
+*Document Version: 2.0 | Last Updated: 2025-01-22 | Status: Published*

@@ -1,3 +1,8 @@
+---
+status: Published
+owner: VintageDon https://github.com/vintagedon
+---
+
 ﻿# Contributing to RAG-Optimized Documentation Framework
 
 We welcome contributions from documentation practitioners, AI engineers, enterprise users, and anyone passionate about bridging human and AI knowledge consumption!
@@ -83,7 +88,7 @@ We welcome several types of contributions:
 **Submission Process:**
 
 1. Create a new directory in `/examples/community-projects/`
-2. Follow the [Interior README Template](templates/interior-readme-template-pending.md)
+2. Follow the [Interior README Template](templates/interior-readme-template.md)
 3. Include metrics, lessons learned, and reusable patterns
 4. Document any framework adaptations or optimizations
 
@@ -222,7 +227,7 @@ All documentation must follow our framework standards:
    - tech: [technologies]
    - audience: [target-users]
    related_documents:
-   - "[Related Doc](path/to/document.md)"
+   - "[Related Doc](_PLACEHOLDER.md)"
    ---
    -->
    ```

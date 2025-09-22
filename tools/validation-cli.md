@@ -1,639 +1,571 @@
 ﻿<!--
 ---
-title: "RAG-Optimized Documentation CLI Validation Tool - Specification and Implementation Guide"
-description: "Comprehensive specification for command-line validation tool supporting RAG-optimized documentation framework standards and quality assurance"
-author: "VintageDon - https://github.com/vintagedon"
+title: "CLI Validation Tool - RAG-Optimized Documentation Local Development"
+description: "Comprehensive specification for command-line interface validation tool supporting local development workflows"
+owner: "VintageDon - https://github.com/vintagedon"
 ai_contributor: "Claude Sonnet 4"
-date: "2025-01-21"
+lastReviewed: "2025-01-21"
 version: "1.0"
 status: "Published"
 tags:
-- type: tooling-specification
-- domain: validation-automation
+- type: specification
+- domain: local-development
 - tech: command-line-interface
 - audience: developers/maintainers
 related_documents:
-- "[Documentation Standards](../../docs/standards-specification.md)"
-- "[GitHub Actions Specification](github-actions.md)"
-- "[Link Checker Implementation](scripts/link-checker.md)"
+- "[Tools Overview](README.md)"
+- "[GitHub Actions](github-actions.md)"
+- "[Scripts Collection](scripts/README.md)"
+type: specification
 ---
 -->
 
-# **RAG-Optimized Documentation CLI Validation Tool**
+# 🖥️ **CLI Validation Tool - Local Development**
 
-Comprehensive specification for a command-line interface tool that validates, maintains, and reports on RAG-optimized documentation framework compliance and quality.
+Comprehensive specification for implementing command-line interface validation tools that provide immediate feedback and quality assurance during local documentation development workflows.
 
 ---
 
-## **Introduction**
+## 📖 **1. Introduction**
 
-The RAG-Optimized Documentation CLI tool provides local validation, maintenance, and reporting capabilities that complement the GitHub Actions automation while enabling offline development and quality assurance workflows. This tool empowers documentation authors and maintainers to validate their work locally before committing changes.
+This specification defines a command-line interface tool that provides comprehensive validation capabilities for RAG-optimized documentation during local development. The CLI tool enables developers to validate framework compliance, check quality standards, and receive immediate feedback before committing changes.
 
 ### Purpose
 
-The CLI tool addresses critical local development and validation needs:
+The CLI validation tool addresses critical development needs by:
 
-- Local validation of documentation changes before committing to version control
-- Batch processing and validation of existing documentation repositories
-- Offline quality assurance and compliance checking capabilities
-- Migration assistance for repositories adopting the RAG-optimized framework
-- Comprehensive reporting and analysis for documentation governance
+- Providing immediate feedback during documentation authoring and editing
+- Enabling local validation without requiring CI/CD pipeline execution
+- Supporting development workflow integration with pre-commit hooks and editor plugins
+- Facilitating rapid iteration and quality improvement during content creation
 
 ### Scope
 
 **What's Covered:**
 
-- Semantic numbering validation and consistency checking
-- YAML front matter validation and completeness verification
-- Template compliance verification and gap analysis
-- Internal link validation and structure verification
-- Documentation quality metrics and reporting
-- Migration utilities for existing documentation repositories
+- Complete CLI tool specification with command structure and option definitions
+- Validation capabilities for framework compliance, quality standards, and content structure
+- Integration patterns for development workflows, editors, and automation systems
+- Output formats and reporting capabilities for various use cases and environments
 
 **What's Not Covered:**
 
-- Content creation or automated documentation generation
-- External link validation (handled by GitHub Actions)
-- Integration with external governance or compliance platforms
-- Real-time collaboration or multi-user editing capabilities
+- Graphical user interface or web-based validation tools
+- Content creation or automated documentation generation capabilities
+- Integration with external proprietary platforms or specialized documentation systems
 
 ### Target Audience
 
-**Primary Users:** Documentation authors, repository maintainers, and DevOps engineers  
-**Secondary Users:** Compliance officers and quality assurance teams  
-**Background Assumed:** Basic command-line proficiency and familiarity with documentation workflows
+**Primary Users:** Documentation authors, developers, and content creators  
+**Secondary Users:** Repository maintainers and quality assurance teams  
+**Background Assumed:** Command-line tool usage and basic documentation workflow knowledge
 
 ### Overview
 
-The CLI tool serves as the local development companion to the GitHub Actions automation, providing immediate feedback and validation during the documentation authoring process while supporting broader repository management and migration activities.
+The CLI tool provides comprehensive validation capabilities that integrate seamlessly with existing development workflows while supporting the quality and compliance requirements of RAG-optimized documentation frameworks.
 
 ---
 
-## **Dependencies & Relationships**
+## 🔗 **2. Dependencies & Prerequisites**
 
-Understanding the CLI tool's integration with the broader RAG-optimized documentation ecosystem.
+### System Requirements
 
-### Framework Integration
+**Runtime Environment:**
 
-- **Documentation Standards** - Enforces semantic numbering, YAML front matter, and structural requirements
-- **Template Framework** - Validates compliance with established template patterns and customizations
-- **GitHub Actions** - Provides local validation that mirrors automated CI/CD checks
-- **Repository Structure** - Supports hierarchical README systems and distributed knowledge graphs
+- Python 3.8+ with standard library and package management capabilities
+- Operating system support for Windows, macOS, and Linux environments
+- Command-line terminal access and shell environment integration
+- File system read access for repository content and configuration files
+
+### Python Dependencies
+
+**Core Libraries:**
+
+- `argparse` - Command-line argument parsing and interface definition
+- `pathlib` - Cross-platform file system path manipulation
+- `yaml` - YAML front matter parsing and validation
+- `json` - JSON output formatting and configuration management
+- `re` - Regular expression pattern matching for content validation
+
+**Optional Dependencies:**
+
+- `colorama` - Cross-platform colored terminal output
+- `tabulate` - Formatted table output for reports and summaries
+- `click` - Enhanced command-line interface development (alternative to argparse)
+
+---
+
+## 📋 **3. Command Structure & Interface**
+
+### Primary Command Interface
+
+**Base Command Structure:**
+
+```bash
+rag-docs [COMMAND] [OPTIONS] [PATH]
+
+# Examples:
+rag-docs validate .
+rag-docs validate --format json --output report.json
+rag-docs check --compliance-only --threshold 95
+rag-docs analyze --detailed --export-metrics
+```
+
+### Core Commands
+
+**validate** - Comprehensive Documentation Validation
+
+```bash
+rag-docs validate [PATH] [OPTIONS]
+
+Options:
+  --format FORMAT           Output format: text|json|markdown|github
+  --output FILE             Output file (default: stdout)
+  --compliance-only         Check framework compliance only
+  --threshold PERCENT       Minimum compliance threshold (default: 90)
+  --exclude PATTERN         Exclude files/directories matching pattern
+  --include PATTERN         Include only files/directories matching pattern
+  --exit-on-error          Exit with non-zero code on validation failures
+  --quiet                  Suppress informational output
+  --verbose                Detailed validation output
+  --parallel               Enable parallel processing for large repositories
+  --max-workers NUM        Maximum worker threads for parallel processing
+
+Examples:
+  rag-docs validate .                    # Validate current directory
+  rag-docs validate --format json       # JSON output for automation
+  rag-docs validate --compliance-only   # Framework compliance check only
+  rag-docs validate --threshold 95      # Require 95% compliance score
+```
+
+**check** - Quick Quality Assessment
+
+```bash
+rag-docs check [PATH] [OPTIONS]
+
+Options:
+  --summary                Show summary statistics only
+  --issues-only           Show only validation issues
+  --warnings              Include warnings in output
+  --count                 Show issue counts by category
+
+Examples:
+  rag-docs check .                      # Quick quality check
+  rag-docs check --summary              # Summary statistics only
+  rag-docs check --issues-only          # Show problems only
+```
+
+**analyze** - Detailed Repository Analysis
+
+```bash
+rag-docs analyze [PATH] [OPTIONS]
+
+Options:
+  --detailed              Include detailed analysis and recommendations
+  --metrics               Generate quality metrics and statistics
+  --export-metrics FILE   Export metrics to file (JSON format)
+  --baseline FILE         Compare against baseline metrics
+  --trend-analysis        Include trend analysis if baseline provided
+
+Examples:
+  rag-docs analyze .                           # Detailed analysis
+  rag-docs analyze --metrics --export-metrics metrics.json
+  rag-docs analyze --baseline baseline.json --trend-analysis
+```
+
+### Specialized Commands
+
+**fix** - Automated Issue Resolution
+
+```bash
+rag-docs fix [PATH] [OPTIONS]
+
+Options:
+  --dry-run               Show what would be fixed without making changes
+  --backup                Create backup files before making changes
+  --issues TYPES          Comma-separated list of issue types to fix
+  --interactive           Prompt for confirmation before each fix
+
+Available fix types:
+  - frontmatter          Add missing YAML front matter
+  - links                Fix broken internal links
+  - structure            Correct semantic numbering issues
+  - formatting           Fix markdown formatting issues
+
+Examples:
+  rag-docs fix . --dry-run                    # Preview fixes
+  rag-docs fix . --issues frontmatter,links   # Fix specific issues
+  rag-docs fix . --interactive                # Interactive fixing
+```
+
+**init** - Repository Initialization
+
+```bash
+rag-docs init [PATH] [OPTIONS]
+
+Options:
+  --template TYPE         Template type: basic|enterprise|community
+  --force                 Overwrite existing configuration
+  --interactive           Interactive setup wizard
+
+Examples:
+  rag-docs init .                        # Initialize with default template
+  rag-docs init . --template enterprise  # Enterprise template
+  rag-docs init . --interactive          # Interactive setup
+```
+
+---
+
+## 📊 **4. Validation Capabilities**
+
+### Framework Compliance Validation
+
+**Semantic Numbering Validation:**
+
+```python
+def validate_semantic_numbering(content, file_path):
+    """
+    Validate semantic section numbering compliance
+    
+    Checks:
+    - Proper numbered section headers (## **1. Section**, etc.)
+    - Section 5 contains "Security & Compliance" keywords
+    - Sequential numbering without gaps
+    - Appropriate section depth and hierarchy
+    """
+    issues = []
+    
+    # Extract section headers and validate numbering
+    sections = extract_numbered_sections(content)
+    
+    # Validate Section 5 compliance (RAG anchor requirement)
+    section_5 = find_section_5(sections)
+    if not section_5 or not contains_security_compliance(section_5):
+        issues.append({
+            'type': 'section_5_compliance',
+            'severity': 'error',
+            'message': 'Section 5 must contain "Security & Compliance"',
+            'file': file_path
+        })
+    
+    return issues
+```
+
+**YAML Front Matter Validation:**
+
+```python
+def validate_yaml_frontmatter(content, file_path):
+    """
+    Validate YAML front matter compliance
+    
+    Required fields:
+    - title, description, author, date, version, status
+    
+    Optional fields:
+    - ai_contributor, tags, related_documents
+    """
+    issues = []
+    
+    frontmatter = extract_yaml_frontmatter(content)
+    if not frontmatter:
+        issues.append({
+            'type': 'missing_frontmatter',
+            'severity': 'error',
+            'message': 'Missing YAML front matter',
+            'file': file_path
+        })
+        return issues
+    
+    # Validate required fields
+    required_fields = ['title', 'description', 'author', 'date', 'version', 'status']
+    for field in required_fields:
+        if field not in frontmatter:
+            issues.append({
+                'type': 'missing_frontmatter_field',
+                'severity': 'warning',
+                'message': f'Missing required field: {field}',
+                'file': file_path,
+                'field': field
+            })
+    
+    return issues
+```
+
+### Content Quality Validation
+
+**Link Integrity Checking:**
+
+```python
+def validate_links(content, file_path, repository_root):
+    """
+    Validate internal and external link integrity
+    
+    Checks:
+    - Internal links point to existing files
+    - Anchor links reference valid headings
+    - External links are accessible (optional)
+    - Relative path correctness
+    """
+    issues = []
+    
+    links = extract_markdown_links(content)
+    
+    for link in links:
+        if is_internal_link(link):
+            target_path = resolve_relative_path(link, file_path, repository_root)
+            if not target_path.exists():
+                issues.append({
+                    'type': 'broken_internal_link',
+                    'severity': 'error',
+                    'message': f'Broken internal link: {link}',
+                    'file': file_path,
+                    'link': link
+                })
+    
+    return issues
+```
+
+### Template Compliance Validation
+
+**Template Usage Verification:**
+
+```python
+def validate_template_compliance(content, file_path, template_type):
+    """
+    Validate proper template usage and customization
+    
+    Checks:
+    - Template structure maintained
+    - Placeholder content replaced with actual content
+    - Required sections present
+    - Navigation patterns correctly implemented
+    """
+    issues = []
+    
+    # Detect template type based on file location and content
+    detected_template = detect_template_type(file_path, content)
+    
+    # Validate template-specific requirements
+    if detected_template == 'interior_readme':
+        issues.extend(validate_interior_readme_template(content, file_path))
+    elif detected_template == 'primary_readme':
+        issues.extend(validate_primary_readme_template(content, file_path))
+    
+    return issues
+```
+
+---
+
+## 📋 **5. Output Formats & Reporting**
+
+### Text Output Format
+
+**Standard Validation Report:**
+
+```
+RAG-Optimized Documentation Validation Report
+==============================================
+
+Repository: /path/to/repository
+Validation Time: 2025-01-21 14:30:00 UTC
+CLI Version: 1.0.0
+
+Validation Summary
+------------------
+✅ Files Processed: 47
+✅ Compliance Score: 94%
+⚠️  Issues Found: 8 (3 errors, 5 warnings)
+✅ Template Compliance: 96%
+
+Issues by Category
+------------------
+[ERROR] Semantic Numbering (2 issues)
+  docs/api/README.md:1 - Missing Section 5 (Security & Compliance)
+  examples/basic/README.md:15 - Invalid section numbering sequence
+
+[ERROR] YAML Front Matter (1 issue)
+  tools/scripts/README.md:1 - Missing YAML front matter
+
+[WARNING] Link Integrity (5 issues)
+  docs/getting-started.md:45 - Broken internal link: ../examples/missing.md
+  community/showcase.md:23 - External link timeout: https://example.com/dead-link
+
+Recommendations
+---------------
+1. Fix 3 critical errors before merge
+2. Consider adding missing YAML front matter for consistency
+3. Review and update broken links
+4. Overall compliance is good (94% - above 90% threshold)
+
+For detailed fixing guidance, run: rag-docs fix --dry-run
+```
+
+### JSON Output Format
+
+**Machine-Readable Validation Results:**
+
+```json
+{
+  "validation_summary": {
+    "repository_path": "/path/to/repository",
+    "validation_time": "2025-01-21T14:30:00Z",
+    "cli_version": "1.0.0",
+    "files_processed": 47,
+    "compliance_score": 94.2,
+    "issues_total": 8,
+    "issues_by_severity": {
+      "error": 3,
+      "warning": 5,
+      "info": 0
+    },
+    "template_compliance": 96.1
+  },
+  "issues": [
+    {
+      "type": "missing_section_5",
+      "severity": "error",
+      "category": "semantic_numbering",
+      "file": "docs/api/README.md",
+      "line": 1,
+      "message": "Missing Section 5 (Security & Compliance)",
+      "fix_suggestion": "Add ## **5. Security & Compliance** section"
+    },
+    {
+      "type": "broken_internal_link",
+      "severity": "warning",
+      "category": "link_integrity",
+      "file": "docs/getting-started.md",
+      "line": 45,
+      "message": "Broken internal link: ../examples/missing.md",
+      "link_target": "../examples/missing.md",
+      "fix_suggestion": "Update link target or create missing file"
+    }
+  ],
+  "quality_metrics": {
+    "documentation_coverage": 92.3,
+    "frontmatter_completeness": 89.4,
+    "link_health": 95.7,
+    "template_adherence": 96.1,
+    "semantic_numbering_compliance": 94.7
+  },
+  "recommendations": [
+    "Fix 3 critical errors before merge",
+    "Consider adding missing YAML front matter for consistency",
+    "Review and update broken links"
+  ]
+}
+```
+
+### GitHub Actions Integration Format
+
+**CI/CD Optimized Output:**
+
+```
+::group::📋 Documentation Validation Summary
+✅ Compliance Score: 94% (Target: 90%)
+⚠️ Issues Found: 8 (3 errors, 5 warnings)
+::endgroup::
+
+::group::❌ Critical Issues Requiring Attention
+::error file=docs/api/README.md,line=1::Missing Section 5 (Security & Compliance)
+::error file=examples/basic/README.md,line=15::Invalid section numbering sequence
+::error file=tools/scripts/README.md,line=1::Missing YAML front matter
+::endgroup::
+
+::group::⚠️ Warnings
+::warning file=docs/getting-started.md,line=45::Broken internal link: ../examples/missing.md
+::warning file=community/showcase.md,line=23::External link timeout: https://example.com/dead-link
+::endgroup::
+
+::set-output name=compliance_score::94
+::set-output name=issues_total::8
+::set-output name=critical_issues::3
+```
+
+---
+
+## 🔒 **6. Security & Integration**
+
+### Tool Security
+
+**Safe Operation Principles:**
+
+- Read-only access to repository files by default
+- Explicit confirmation required for any file modifications
+- No network access unless explicitly enabled for external link checking
+- Sandboxed execution environment with limited system permissions
+
+**Configuration Security:**
+
+```yaml
+# .rag-docs-config.yml - Secure configuration management
+validation:
+  external_links:
+    enabled: false          # Disable by default for security
+    timeout: 5             # Conservative timeout
+    user_agent: "rag-docs-validator/1.0"
+  
+  file_access:
+    read_only: true        # Enforce read-only by default
+    backup_before_fix: true # Always backup before modifications
+  
+  reporting:
+    include_sensitive: false # Exclude sensitive paths from reports
+    sanitize_output: true   # Sanitize file paths in output
+```
 
 ### Development Workflow Integration
 
-- **Pre-commit Hooks** - Can be integrated as pre-commit validation for immediate feedback
-- **Local Development** - Enables offline validation and quality assurance during authoring
-- **Batch Processing** - Supports large-scale validation and migration of existing documentation
-- **Quality Gates** - Provides local verification before pushing changes to remote repositories
-
----
-
-## **CLI Tool Architecture**
-
-Detailed specification of the command-line interface, commands, and functionality.
-
-### Core Commands Structure
-
-**Primary Command Categories:**
-
-**1. Validation Commands (`rag-docs validate`)**
-
-- Comprehensive validation of documentation against framework standards
-- Selective validation of specific files, directories, or document types
-- Incremental validation of changed files since last commit
-- Detailed error reporting and remediation guidance
-
-**2. Analysis Commands (`rag-docs analyze`)**
-
-- Documentation quality metrics and coverage analysis
-- Cross-reference mapping and relationship analysis
-- Template compliance assessment and gap identification
-- Performance analysis for large documentation repositories
-
-**3. Maintenance Commands (`rag-docs maintain`)**
-
-- Automated fix application for common validation issues
-- Template updates and synchronization across documentation
-- Metadata cleanup and standardization
-- Repository structure optimization and organization
-
-**4. Migration Commands (`rag-docs migrate`)**
-
-- Assessment of existing documentation for framework compatibility
-- Automated migration assistance and template application
-- Gap analysis and migration planning reports
-- Staged migration support for large documentation sets
-
-**5. Reporting Commands (`rag-docs report`)**
-
-- Comprehensive quality and compliance reports
-- Governance framework mapping and evidence collection
-- Progress tracking and improvement recommendations
-- Export capabilities for external tools and platforms
-
-### Command-Line Interface Specification
-
-**Global Options:**
-
-```bash
-rag-docs [global-options] <command> [command-options] [arguments]
-
-Global Options:
-  -v, --verbose         Enable verbose output and detailed logging
-  -q, --quiet          Suppress non-essential output
-  -c, --config <file>  Specify custom configuration file
-  --no-color          Disable colored output
-  --format <format>   Output format: text, json, yaml, markdown
-  --help              Display help information
-  --version           Display version information
-```
-
-**Validation Command Specification:**
-
-```bash
-rag-docs validate [options] [path...]
-
-Options:
-  --standards         Validate against documentation standards
-  --templates         Check template compliance
-  --structure         Verify repository structure and navigation
-  --metadata          Validate YAML front matter completeness
-  --links             Check internal link integrity
-  --all               Run all validation checks (default)
-  --fix               Automatically fix issues where possible
-  --report <file>     Generate validation report to specified file
-  --exit-code         Return non-zero exit code on validation failures
-
-Examples:
-  rag-docs validate                    # Validate entire repository
-  rag-docs validate docs/              # Validate specific directory
-  rag-docs validate --templates --fix # Validate templates and auto-fix
-  rag-docs validate --report report.md # Generate markdown report
-```
-
-**Analysis Command Specification:**
-
-```bash
-rag-docs analyze [options] [path...]
-
-Options:
-  --coverage          Analyze documentation coverage and gaps
-  --quality           Generate quality metrics and scores
-  --relationships     Map cross-references and document relationships
-  --complexity        Assess documentation complexity and readability
-  --trends            Analyze changes and trends over time
-  --baseline <file>   Compare against baseline metrics
-  --output <file>     Write analysis results to file
-
-Examples:
-  rag-docs analyze --coverage         # Coverage analysis
-  rag-docs analyze --quality --output metrics.json
-  rag-docs analyze --relationships --format yaml
-```
-
-**Maintenance Command Specification:**
-
-```bash
-rag-docs maintain [options] [path...]
-
-Options:
-  --update-templates  Update documentation to latest template versions
-  --fix-metadata     Fix common YAML front matter issues
-  --organize         Optimize repository structure and organization
-  --cleanup          Remove obsolete files and fix broken references
-  --dry-run          Show what would be changed without making changes
-  --backup           Create backup before making changes
-
-Examples:
-  rag-docs maintain --update-templates --dry-run
-  rag-docs maintain --fix-metadata --backup
-  rag-docs maintain --cleanup docs/
-```
-
-### Configuration Management
-
-**Configuration File Structure (`rag-docs.config.yml`):**
-
-```yaml
-# RAG-Optimized Documentation CLI Configuration
-version: "1.0"
-
-# Validation settings
-validation:
-  standards:
-    semantic_numbering: true
-    yaml_front_matter: true
-    template_compliance: true
-  
-  structure:
-    require_readme_in_dirs: true
-    max_directory_depth: 10
-    allow_empty_directories: false
-  
-  metadata:
-    required_fields:
-      - title
-      - description
-      - author
-      - date
-    
-    tag_taxonomy:
-      type: [project-overview, directory-overview, documentation]
-      domain: [software-development, documentation, security]
-      audience: [developers, users, maintainers]
-
-# Template settings
-templates:
-  default_template: "interior-readme"
-  template_directory: "templates/"
-  custom_templates: []
-  
-  auto_update: false
-  backup_before_update: true
-
-# Analysis settings
-analysis:
-  quality_thresholds:
-    minimum_documentation_coverage: 80
-    maximum_link_failure_rate: 5
-    minimum_metadata_completeness: 95
-  
-  reporting:
-    include_trends: true
-    generate_recommendations: true
-    export_formats: [markdown, json]
-
-# Maintenance settings
-maintenance:
-  auto_fix_enabled: true
-  backup_directory: ".rag-docs-backups/"
-  max_backup_age_days: 30
-  
-  cleanup:
-    remove_empty_files: true
-    fix_broken_links: true
-    update_stale_metadata: true
-
-# Integration settings
-integration:
-  git:
-    use_git_hooks: false
-    commit_message_format: "docs: {description}"
-  
-  github_actions:
-    sync_with_workflows: true
-    validate_workflow_config: true
-```
-
----
-
-## **Validation Engine Specification**
-
-Detailed specification of the validation logic and quality assurance capabilities.
-
-### Semantic Numbering Validation
-
-**Section Number Consistency:**
-
-- Verify that section numbers follow established semantic patterns
-- Check for missing or duplicate section numbers within documents
-- Validate cross-document consistency for related section types
-- Ensure proper hierarchical numbering and nesting
-
-**Template Compliance:**
-
-- Verify that documents follow appropriate template structure
-- Check for required sections based on document type and category
-- Validate that section 5 consistently contains security and compliance information
-- Ensure proper navigation and cross-reference patterns
-
-### YAML Front Matter Validation
-
-**Metadata Completeness:**
-
-- Verify presence of all required metadata fields
-- Validate date formatting and version numbering consistency
-- Check tag taxonomy compliance and categorization accuracy
-- Ensure related documents references are valid and accessible
-
-**Data Quality Validation:**
-
-- Validate URL formatting and accessibility for links
-- Check email address and ORCID formatting
-- Verify taxonomy consistency across related documents
-- Ensure metadata aligns with document content and purpose
-
-### Structural Validation
-
-**Repository Structure:**
-
-- Verify that all directories contain appropriate README.md files
-- Check hierarchical navigation and cross-reference accuracy
-- Validate file naming conventions and directory organization
-- Ensure proper integration with version control and audit trail requirements
-
-**Link Integrity:**
-
-- Validate all internal links and cross-references
-- Check anchor links to specific sections within documents
-- Verify that navigation links create coherent pathways through documentation
-- Identify orphaned files and broken reference chains
-
-### Quality Metrics Calculation
-
-**Documentation Coverage:**
-
-- Calculate percentage of repository components with documentation
-- Identify gaps in documentation coverage by category and type
-- Assess documentation depth and completeness for critical components
-- Track improvement trends and coverage evolution over time
-
-**Maintenance Health:**
-
-- Analyze documentation freshness and update frequency
-- Identify stale or outdated documentation requiring attention
-- Calculate link health and external dependency stability
-- Assess contributor activity and documentation collaboration patterns
-
----
-
-## **Reporting and Analytics**
-
-Comprehensive reporting capabilities for governance, compliance, and quality assurance.
-
-### Quality Assurance Reports
-
-**Validation Summary Report:**
-
-```markdown
-# RAG-Optimized Documentation Validation Report
-
-Generated: 2025-01-21 14:30:00 UTC
-Repository: organization/project-name
-CLI Version: 1.0.0
-
-## Validation Summary
-
-| Category | Status | Issues | Warnings |
-|----------|--------|--------|----------|
-| Semantic Numbering | ✅ Pass | 0 | 2 |
-| YAML Front Matter | ⚠️ Warning | 3 | 8 |
-| Template Compliance | ✅ Pass | 0 | 1 |
-| Structure Validation | ❌ Fail | 5 | 3 |
-| Link Integrity | ✅ Pass | 0 | 0 |
-
-## Detailed Findings
-
-### Issues Requiring Attention (8 total)
-
-#### Structure Validation Issues (5)
-- `docs/api/README.md`: Missing required section 5 (Security & Compliance)
-- `examples/basic/README.md`: Invalid semantic numbering sequence
-- `tools/scripts/README.md`: Missing YAML front matter
-- `src/components/README.md`: Broken cross-reference to ../docs/architecture.md
-- `tests/README.md`: Template non-compliance - missing Dependencies section
-
-### Warnings (14 total)
-
-#### YAML Front Matter Warnings (8)
-- `docs/getting-started.md`: Missing optional 'ai_contributor' field
-- `examples/advanced/README.md`: Date format should be YYYY-MM-DD
-- Multiple files: Tag taxonomy could be more specific
-
-## Recommendations
-
-1. **Immediate Action Required:** Fix 5 structural validation issues
-2. **Quality Improvement:** Address YAML front matter warnings for consistency
-3. **Best Practice:** Consider adding missing optional metadata for completeness
-
-## Quality Metrics
-
-- **Overall Compliance:** 87% (Target: 95%)
-- **Documentation Coverage:** 92% of directories have README files
-- **Link Health:** 100% internal links functional
-- **Template Adherence:** 95% compliance with semantic numbering
-
-For detailed remediation guidance, run: `rag-docs validate --verbose --fix`
-```
-
-### Governance and Compliance Reports
-
-**Framework Mapping Report:**
-
-- Mapping of documentation to governance framework requirements
-- Compliance status and gap analysis for regulatory frameworks
-- Audit trail summaries and evidence collection status
-- Recommendations for compliance improvement and maintenance
-
-**Progress Tracking Report:**
-
-- Documentation quality trends and improvement metrics
-- Contribution patterns and community engagement analysis
-- Framework adoption progress and milestone tracking
-- Comparison against baseline metrics and organizational goals
-
-### Migration Assessment Reports
-
-**Repository Assessment:**
-
-- Compatibility analysis for adopting RAG-optimized framework
-- Effort estimation and migration planning recommendations
-- Gap analysis and required changes identification
-- Risk assessment and mitigation strategies for large-scale migrations
-
----
-
-## **Implementation Standards**
-
-Guidelines and requirements for CLI tool development and deployment.
-
-### Development Requirements
-
-**Technology Stack:**
-
-- **Language:** Python 3.8+ for cross-platform compatibility and rich ecosystem
-- **Dependencies:** Minimal external dependencies for easy installation and maintenance
-- **Packaging:** Standard Python packaging with pip installation support
-- **Configuration:** YAML-based configuration with reasonable defaults
-
-**Code Quality Standards:**
-
-- Comprehensive test suite with >90% code coverage
-- Type hints and static analysis for code quality assurance
-- Documentation following the RAG-optimized framework principles
-- Performance optimization for large repository processing
-
-### Distribution and Installation
-
-**Installation Methods:**
-
-```bash
-# Primary installation via pip
-pip install rag-docs-cli
-
-# Development installation from source
-git clone https://github.com/vintagedon/rag-docs-cli.git
-cd rag-docs-cli
-pip install -e .
-
-# Alternative installation via package managers
-brew install rag-docs-cli  # macOS
-chocolatey install rag-docs-cli  # Windows
-```
-
-**Version Management:**
-
-- Semantic versioning aligned with framework evolution
-- Backward compatibility maintenance for configuration and commands
-- Clear migration guides for breaking changes
-- Integration with framework version compatibility matrix
-
-### Integration Guidelines
-
 **Pre-commit Hook Integration:**
 
-```yaml
-# .pre-commit-config.yaml
-repos:
-  - repo: https://github.com/vintagedon/rag-docs-cli
-    rev: v1.0.0
-    hooks:
-      - id: rag-docs-validate
-        name: RAG-Optimized Documentation Validation
-        entry: rag-docs validate --exit-code
-        language: python
-        files: \.md$
+```bash
+#!/bin/sh
+# .git/hooks/pre-commit
+
+echo "🔍 Running RAG documentation validation..."
+
+# Run validation on staged files
+rag-docs validate --format github --exit-on-error --quiet
+
+if [ $? -ne 0 ]; then
+    echo "❌ Documentation validation failed"
+    echo "Run 'rag-docs validate .' for detailed results"
+    echo "Run 'rag-docs fix --dry-run' to see available fixes"
+    exit 1
+fi
+
+echo "✅ Documentation validation passed"
+exit 0
 ```
 
-**CI/CD Integration:**
+**Editor Integration Examples:**
 
-- Docker container support for consistent execution environments
-- Integration with popular CI/CD platforms and workflows
-- Environment variable configuration for automated execution
-- Report generation and artifact management for compliance workflows
+```json
+// VS Code settings.json
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.md$",
+        "cmd": "rag-docs check ${file} --summary"
+      }
+    ]
+  }
+}
+```
 
----
+**Continuous Integration Integration:**
 
-## **Security & Compliance**
-
-Security considerations and compliance requirements for CLI tool implementation and usage.
-
-### Security Best Practices
-
-**Input Validation:**
-
-- Comprehensive validation of file paths and user inputs
-- Protection against directory traversal and injection attacks
-- Secure handling of configuration files and sensitive metadata
-- Validation of external references and URL handling
-
-**Data Protection:**
-
-- Secure handling of documentation content and metadata
-- Privacy protection for author information and contribution data
-- Temporary file management and cleanup procedures
-- Integration with organizational data protection policies
-
-### Compliance Considerations
-
-**Audit Trail Support:**
-
-- Comprehensive logging of validation activities and results
-- Integration with organizational audit and compliance frameworks
-- Report generation and retention for governance requirements
-- Version tracking and change management for compliance evidence
-
-**Access Control:**
-
-- Integration with organizational identity and access management
-- Role-based access control for sensitive validation and reporting features
-- Secure configuration management and credential handling
-- Support for air-gapped and restricted environments
+```yaml
+# GitHub Actions workflow step
+- name: Validate Documentation
+  run: |
+    rag-docs validate . \
+      --format github \
+      --threshold 90 \
+      --exit-on-error
+```
 
 ---
 
-## **Future Enhancement Roadmap**
-
-Planned features and capabilities for future CLI tool releases.
-
-### Phase 2 Enhancements
-
-**Advanced Validation Features:**
-
-- Content quality assessment using natural language processing
-- Automated accessibility compliance checking
-- Integration with external validation services and APIs
-- Advanced template customization and validation rule configuration
-
-**Collaboration Features:**
-
-- Multi-user validation coordination and conflict resolution
-- Integration with review and approval workflows
-- Collaborative quality assurance and peer review support
-- Community contribution and feedback integration
-
-### Phase 3 Advanced Features
-
-**AI-Powered Capabilities:**
-
-- Automated content improvement suggestions
-- Template recommendation based on content analysis
-- Intelligent migration assistance and optimization
-- Predictive quality assurance and maintenance recommendations
-
-**Enterprise Integration:**
-
-- Integration with enterprise governance and compliance platforms
-- Advanced reporting and dashboard capabilities
-- API access and programmatic integration support
-- Scalability enhancements for large enterprise documentation repositories
-
----
-
-## **References & Related Resources**
-
-### CLI Development Resources
-
-- **[Click Framework](https://click.palletsprojects.com/)** - Python command-line interface framework
-- **[Rich](https://rich.readthedocs.io/)** - Rich text and beautiful formatting for terminal applications
-- **[PyYAML](https://pyyaml.org/)** - YAML parsing and generation for Python
-
-### Internal References
-
-- **[Documentation Standards](../../docs/standards-specification.md)** - Complete standards specification for validation requirements
-- **[GitHub Actions Specification](github-actions.md)** - Automated validation workflow specification
-- **[Template Collection](../../templates/README.md)** - Template framework and compliance requirements
-
-### Quality Assurance Tools
-
-- **[Markdownlint](https://github.com/DavidAnson/markdownlint)** - Markdown syntax and style validation
-- **[Vale](https://vale.sh/)** - Syntax-aware linter for prose and documentation
-- **[TextLint](https://textlint.github.io/)** - Pluggable natural language linter
-
----
-
-## **Documentation Metadata**
-
-### Change Log
-
-| Version | Date | Changes | Author |
-|---------|------|---------|--------|
-| 1.0 | 2025-01-21 | Initial CLI tool specification | VintageDon |
-
-### Authorship & Collaboration
-
-**Primary Author:** VintageDon ([GitHub Profile](https://github.com/vintagedon))  
-**ORCID:** [0009-0008-7695-4093](https://orcid.org/0009-0008-7695-4093)  
-**AI Assistance:** Claude Sonnet 4  
-**Methodology:** RAVGVR (Request-Analyze-Verify-Generate-Validate-Reflect)  
-**Quality Assurance:** Human validation and CLI design review
-
-### Technical Notes
-
-- **Implementation Priority:** High - Essential for local development and validation workflows
-- **Dependencies:** Python 3.8+ with minimal external dependencies for broad compatibility
-- **Maintenance Requirements:** Regular updates aligned with framework evolution and community feedback
-- **Community Integration:** Designed for easy adoption and contribution by community developers
-
-*Document Version: 1.0 | Last Updated: 2025-01-21 | Status: Published*
+*CLI Validation Tool Specification Version: 1.0 | Last Updated: 2025-01-21 | Status: Published*

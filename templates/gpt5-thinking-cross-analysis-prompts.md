@@ -2,8 +2,8 @@
 ---
 title: "GPT-5 Thinking Model Prompts - Technical Analysis & Cross-Review"
 description: "Specialized prompts for GPT-5 Thinking model in multi-model documentation review processes"
-author: "VintageDon - https://github.com/vintagedon"
-date: "2025-01-21"
+owner: "VintageDon - https://github.com/vintagedon"
+lastReviewed: "2025-01-21"
 version: "1.0"
 status: "Published"
 tags:
@@ -14,6 +14,7 @@ tags:
 related_documents:
 - "[Gemini Pro 2.5 Prompts](gemini-pro25-prompts.md)"
 - "[Phase 3 README](../README.md)"
+type: prompt-template
 ---
 -->
 

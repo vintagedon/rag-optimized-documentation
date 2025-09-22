@@ -2,9 +2,9 @@
 ---
 title: "Scripts - RAG-Optimized Documentation Framework Automation Scripts"
 description: "Directory overview and navigation for automation scripts supporting RAG-optimized documentation validation and maintenance"
-author: "VintageDon - https://github.com/vintagedon"
+owner: "VintageDon - https://github.com/vintagedon"
 ai_contributor: "Claude Sonnet 4"
-date: "2025-01-21"
+lastReviewed: "2025-01-21"
 version: "1.0"
 status: "Published"
 tags:
@@ -16,6 +16,7 @@ related_documents:
 - "[Tools Overview](../README.md)"
 - "[GitHub Actions Specification](../github-actions.md)"
 - "[CLI Validation Tool](../validation-cli.md)"
+type: directory-overview
 ---
 -->
 

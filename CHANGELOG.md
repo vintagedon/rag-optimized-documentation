@@ -1,3 +1,8 @@
+---
+status: Published
+owner: VintageDon https://github.com/vintagedon
+---
+
 ﻿# Changelog
 
 All notable changes to the RAG-Optimized Documentation Framework will be documented in this file.

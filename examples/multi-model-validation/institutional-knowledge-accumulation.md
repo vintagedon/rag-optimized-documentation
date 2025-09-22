@@ -2,9 +2,9 @@
 ---
 title: "Institutional Knowledge Accumulation - Building Persistent Multi-Model Intelligence Through Google Drive Integration"
 description: "Framework for capturing, storing, and leveraging accumulated multi-model review insights for continuous organizational learning"
-author: "VintageDon - https://github.com/vintagedon"
+owner: "VintageDon - https://github.com/vintagedon"
 ai_contributor: "Claude Sonnet 4 - RAVGVR Methodology"
-date: "2025-01-21"
+lastReviewed: "2025-01-21"
 version: "1.0"
 status: "Published"
 tags:
@@ -16,6 +16,7 @@ related_documents:
 - "[Multi-Model Codebase Analysis](multi-model-codebase-analysis.md)"
 - "[Cognitive Specialization Prompts](cognitive-specialization-prompts.md)"
 - "[45-Minute Milestone Review](45-minute-milestone-review.md)"
+type: knowledge-management
 ---
 -->
 

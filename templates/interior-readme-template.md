@@ -2,9 +2,9 @@
 ---
 title: "[Directory Name] - [Brief Directory Purpose]"
 description: "Directory overview and navigation for [specific functionality/component]"
-author: "VintageDon - https://github.com/vintagedon"
+owner: "VintageDon - https://github.com/vintagedon"
 ai_contributor: "[AI Model Name/Version if applicable]"
-date: "YYYY-MM-DD"
+lastReviewed: "YYYY-MM-DD"
 version: "1.0"
 status: "Published"
 tags:
@@ -15,6 +15,7 @@ tags:
 related_documents:
 - "[Parent Directory](../README.md)"
 - "[Related Component](../related-component/README.md)"
+type: directory-overview
 ---
 -->
 
@@ -24,7 +25,7 @@ related_documents:
 
 ---
 
-## 📖 **Introduction**
+## 📖 **1. Introduction**
 
 This directory provides [clear description of what this directory accomplishes]. It serves as [primary function description] within the project, addressing [specific need or functionality] for [target audience] working with [relevant component or feature].
 
@@ -57,7 +58,7 @@ This directory provides [clear description of what this directory accomplishes].
 
 ---
 
-## 🔗 **Dependencies & Relationships**
+## 🔗 **2. Dependencies & Relationships**
 
 This section maps how this directory integrates with other project components and external resources.
 
@@ -73,7 +74,7 @@ This section maps how this directory integrates with other project components an
 
 ---
 
-## 📂 **Directory Structure**
+## 📂 **3. Directory Structure**
 
 ``` markdown
 [directory-name]/
@@ -81,12 +82,12 @@ This section maps how this directory integrates with other project components an
 ├── 📄 [key-file].[ext]        # [Description of key file purpose]
 ├── 📄 [another-file].[ext]    # [Description of another important file]
 ├── 📁 [subdirectory]/         # [Description of subdirectory purpose]
-│   ├── README.md              # [Subdirectory documentation]
-│   ├── [sub-file].[ext]       # [Description of file in subdirectory]
-│   └── [another-sub]/         # [Nested subdirectory if applicable]
+│   ├── 📄 README.md           # [Subdirectory documentation]
+│   ├── 📄 [sub-file].[ext]    # [Description of file in subdirectory]
+│   └── 📁 [another-sub]/      # [Nested subdirectory if applicable]
 ├── 📁 [another-subdir]/       # [Description of another subdirectory]
-│   ├── README.md              # [Subdirectory documentation]
-│   └── [files].[ext]          # [Description of files in this subdirectory]
+│   ├── 📄 README.md           # [Subdirectory documentation]
+│   └── 📄 [files].[ext]       # [Description of files in this subdirectory]
 └── 📄 [config-file].[ext]     # [Configuration or supporting file]
 ```
 
@@ -105,7 +106,7 @@ This section maps how this directory integrates with other project components an
 
 ---
 
-## 🚀 **Usage & Implementation**
+## 🚀 **4. Usage & Implementation**
 
 Complete guide to using and working with files in this directory.
 
@@ -147,7 +148,7 @@ Complete guide to using and working with files in this directory.
 
 ---
 
-## 🔒 **Security & Compliance**
+## 🔒 **5. Security & Compliance**
 
 ### Access Requirements
 
@@ -167,7 +168,7 @@ Complete guide to using and working with files in this directory.
 
 ---
 
-## 🛠️ **Maintenance & Support**
+## 🛠️ **6. Maintenance & Support**
 
 ### File Management
 
@@ -203,7 +204,7 @@ Complete guide to using and working with files in this directory.
 
 ---
 
-## 📚 **References & Related Resources**
+## 📚 **7. References & Related Resources**
 
 ### Internal References
 
@@ -224,7 +225,7 @@ Complete guide to using and working with files in this directory.
 
 ---
 
-## 📋 **Documentation Metadata**
+## 📋 **8. Documentation Metadata**
 
 ### Change Log
 
